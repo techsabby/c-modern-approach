@@ -22,13 +22,6 @@ void print_stack(void);
 // *** start of program ***
 int main(void) {
 
-    push(1);
-    push(2);
-    push(3);
-    pop();
-    pop();
-    pop();
-    pop();
     print_stack();
 
     return 0;
@@ -72,6 +65,9 @@ void stack_underflow() {
 }
 
 void print_stack(void) {
-    for(int i = top - 1; i >= 0; i--)
-        printf("[%d]\n", contents[i]);
+     if(top == 0)
+        printf("stack is empty, nothing to print\n");
+    else
+        for(int i = top - 1; i >= 0; i--)
+            printf("[%d]\n", contents[i]);
 }
