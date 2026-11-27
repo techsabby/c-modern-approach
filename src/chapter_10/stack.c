@@ -6,13 +6,13 @@
 int top = 0, contents[STACK_SIZE]; // external variables have file scope 
 
 // check functions 
-void make_empty(void);
 bool is_empty(void);
 bool is_full(void);
 
 // action functions 
 void push(int);
 int pop(void);
+void make_empty(void);
 
 // print functions 
 void stack_overflow(void);
@@ -28,10 +28,6 @@ int main(void) {
 }
 
 // check functions 
-void make_empty(void) {
-    top = 0;
-}
-
 bool is_empty(void) {
     return top == 0;
 }
@@ -53,6 +49,10 @@ int pop() {
         stack_underflow();
     else
         return contents[top--]; // remove item from the stack 
+}
+
+void make_empty(void) {
+    top = 0;
 }
 
 // print functions
