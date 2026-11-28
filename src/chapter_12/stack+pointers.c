@@ -57,7 +57,7 @@ int pop() {
     if (is_empty())
         stack_underflow();
     else
-        return *top_pointer--;
+        return *--top_pointer;
 }
 
 void empty() {
